@@ -46,15 +46,20 @@
 <br/>
 
 <pre>
-  ╔══════════════════════════════════════════════════════╗
-  ║                                                      ║
-  ║  name ->  jasmehar                                   ║
-  ║  location -> toronto                                 ║
-  ║  role -> developer                                   ║
-  ║  working on ->  <a href="https://github.com/jasmehar-k/dev-team">dev-team</a>                             ║
-  ║                                                      ║
-  ║   ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    ║
-  ╚══════════════════════════════════════════════════════╝
+         
+       ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    
+  ╔════════════════════════════════════════════════════════╗
+  ║                                                        ║
+  ║  ✦ name ->  jasmehar                                   ║
+  ║  ✦ location -> toronto                                 ║
+  ║  ✦ role -> developer                                   ║
+  ║  ✦ working on ->  <a href="https://github.com/jasmehar-k/dev-team">dev-team</a>                             ║
+  ║  ✦ studying at -> University of Waterloo               ║
+  ║  ✦ studying -> software engineering (2nd year)         ║
+  ║                                                        ║
+  ╚════════════════════════════════════════════════════════╝
+       ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    
+
 </pre>
 
 <!-- <div align="center">
