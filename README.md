@@ -131,10 +131,9 @@
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=jasmehar-k&show_icons=true&hide_border=true&bg_color=090014&title_color=a78bfa&icon_color=7c3aed&text_color=ddd6fe&ring_color=5b21b6&border_radius=0&custom_title=✦+github+stats" height="165"/>
-&nbsp;&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jasmehar-k&layout=compact&hide_border=true&bg_color=090014&title_color=a78bfa&text_color=ddd6fe&border_radius=0&custom_title=✦+languages" height="165"/>
 
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=jasmehar-k&theme=midnight_purple" height="165"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=jasmehar-k&theme=midnight_purple" height="165"/>
 <br/><br/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com?user=jasmehar-k&hide_border=true&background=090014&ring=7c3aed&fire=a78bfa&currStreakLabel=ddd6fe&sideNums=a78bfa&sideLabels=7c3aed&dates=5b21b6&stroke=090014&border_radius=0" />
