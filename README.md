@@ -53,7 +53,6 @@
   ║  location →  Toronto                                 ║
   ║  role     →  developer                               ║
   ║  status   →  hacking                                 ║
-  ║  fuel     →  ☕  +  🎵                                ║
   ║                                                      ║
   ║   ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    ║
   ╚══════════════════════════════════════════════════════╝
@@ -90,6 +89,7 @@
 <br/>
 
 **· · · languages · · ·**
+
 ![Python](https://img.shields.io/badge/python-1e0a3c?style=for-the-badge&logo=python&logoColor=ddd6fe)
 ![JavaScript](https://img.shields.io/badge/javascript-090014?style=for-the-badge&logo=javascript&logoColor=ddd6fe)
 ![TypeScript](https://img.shields.io/badge/typescript-130829?style=for-the-badge&logo=typescript&logoColor=a78bfa)
@@ -234,7 +234,7 @@
 
 ```
   · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·
-          ✦  thanks for drifting by  ˚✧₊⁎  ✦
+          ✦  thanks for stopping by  ˚✧₊⁎  ✦
   · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·
 ```
 
