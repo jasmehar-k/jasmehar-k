@@ -59,14 +59,14 @@
   ╚══════════════════════════════════════════════════════╝
 ```
 
-<div align="center">
+<!-- <div align="center">
 
-🔭 &nbsp; building **[YOUR CURRENT PROJECT]**
+🔭 &nbsp; building **[VisionCAD]**
 &nbsp;·&nbsp;
 🌱 &nbsp; learning **ML**
 &nbsp;·&nbsp;
 
-</div>
+</div> -->
 
 <br/>
 
