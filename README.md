@@ -49,8 +49,8 @@
 ```
   ╔══════════════════════════════════════════════════════╗
   ║                                                      ║
-  ║  name     →  Jasmehar Kaur                           ║
-  ║  location →  Toronto                                 ║
+  ║  name     →  jasmehar                                ║
+  ║  location →  toronto                                 ║
   ║  role     →  developer                               ║
   ║  status   →  hacking                                 ║
   ║                                                      ║
