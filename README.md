@@ -45,17 +45,17 @@
 
 <br/>
 
-```
+<pre>
   ╔══════════════════════════════════════════════════════╗
   ║                                                      ║
-  ║  name     →  jasmehar                                ║
-  ║  location →  toronto                                 ║
-  ║  role     →  developer                               ║
-  ║  status   →  hacking                                 ║
+  ║  name ->  jasmehar                                   ║
+  ║  location -> toronto                                 ║
+  ║  role -> developer                                   ║
+  ║  working on ->  <a href="https://github.com/jasmehar-k/dev-team">dev-team</a>                             ║
   ║                                                      ║
   ║   ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    ║
   ╚══════════════════════════════════════════════════════╝
-```
+</pre>
 
 <!-- <div align="center">
 
