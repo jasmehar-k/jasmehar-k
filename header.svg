@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280">
+  <defs>
+    <!-- Deep space background gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080012"/>
+      <stop offset="40%" stop-color="#130829"/>
+      <stop offset="100%" stop-color="#1e0a3c"/>
+    </linearGradient>
+
+    <!-- Planet surface gradient -->
+    <radialGradient id="planetGrad" cx="38%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#c4b5fd"/>
+      <stop offset="30%" stop-color="#8b5cf6"/>
+      <stop offset="65%" stop-color="#5b21b6"/>
+      <stop offset="100%" stop-color="#2e0f5e"/>
+    </radialGradient>
+
+    <!-- Planet ring gradient -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#a78bfa" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#ddd6fe" stop-opacity="0.85"/>
+      <stop offset="80%" stop-color="#a78bfa" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Nebula glow -->
+    <radialGradient id="nebula1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Planet stripe mask for rotation illusion -->
+    <linearGradient id="stripeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4c1d95" stop-opacity="0.5"/>
+      <stop offset="30%" stop-color="#6d28d9" stop-opacity="0.2"/>
+      <stop offset="60%" stop-color="#4c1d95" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#2e0f5e" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Clip path for planet circle -->
+    <clipPath id="planetClip">
+      <circle cx="680" cy="130" r="72"/>
+    </clipPath>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="starGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <rect width="900" height="280" fill="url(#bg)"/>
+
+  <!-- Nebula clouds -->
+  <ellipse cx="200" cy="80" rx="180" ry="100" fill="url(#nebula1)"/>
+  <ellipse cx="650" cy="200" rx="200" ry="120" fill="url(#nebula2)"/>
+  <ellipse cx="750" cy="60" rx="150" ry="90" fill="url(#nebula1)"/>
+  <ellipse cx="100" cy="220" rx="160" ry="80" fill="url(#nebula2)"/>
+
+  <!-- ═══ STARFIELD — tiny dots ═══ -->
+  <!-- Layer 1: distant tiny stars -->
+  <g opacity="0.5">
+    <circle cx="12" cy="18" r="0.8" fill="#e8d5ff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.1s" repeatCount="indefinite"/></circle>
+    <circle cx="45" cy="7" r="0.6" fill="#ddd6fe"><animate attributeName="opacity" values="1;0.2;1" dur="2.4s" repeatCount="indefinite"/></circle>
+    <circle cx="78" cy="32" r="1" fill="#c4b5fd"><animate attributeName="opacity" values="0.4;1;0.4" dur="4.2s" repeatCount="indefinite"/></circle>
+    <circle cx="130" cy="15" r="0.7" fill="#ede9fe"><animate attributeName="opacity" values="0.6;1;0.6" dur="1.9s" repeatCount="indefinite"/></circle>
+    <circle cx="160" cy="45" r="0.8" fill="#ddd6fe"><animate attributeName="opacity" values="1;0.3;1" dur="3.7s" repeatCount="indefinite"/></circle>
+    <circle cx="205" cy="22" r="0.6" fill="#e8d5ff"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="240" cy="8" r="1.1" fill="#c4b5fd"><animate attributeName="opacity" values="0.7;1;0.7" dur="5.1s" repeatCount="indefinite"/></circle>
+    <circle cx="275" cy="38" r="0.5" fill="#ddd6fe"><animate attributeName="opacity" values="1;0.4;1" dur="2.2s" repeatCount="indefinite"/></circle>
+    <circle cx="310" cy="12" r="0.9" fill="#ede9fe"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" repeatCount="indefinite"/></circle>
+    <circle cx="355" cy="28" r="0.6" fill="#e8d5ff"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="4.8s" repeatCount="indefinite"/></circle>
+    <circle cx="390" cy="6" r="0.8" fill="#c4b5fd"><animate attributeName="opacity" values="1;0.5;1" dur="1.7s" repeatCount="indefinite"/></circle>
+    <circle cx="430" cy="42" r="0.7" fill="#ddd6fe"><animate attributeName="opacity" values="0.4;1;0.4" dur="3.9s" repeatCount="indefinite"/></circle>
+    <circle cx="470" cy="18" r="1" fill="#ede9fe"><animate attributeName="opacity" values="0.6;1;0.6" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="510" cy="9" r="0.6" fill="#e8d5ff"><animate attributeName="opacity" values="1;0.3;1" dur="4.3s" repeatCount="indefinite"/></circle>
+    <circle cx="550" cy="35" r="0.9" fill="#c4b5fd"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.1s" repeatCount="indefinite"/></circle>
+    <circle cx="590" cy="14" r="0.7" fill="#ddd6fe"><animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.9s" repeatCount="indefinite"/></circle>
+    <circle cx="625" cy="44" r="0.5" fill="#ede9fe"><animate attributeName="opacity" values="1;0.6;1" dur="5.4s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="25" r="0.8" fill="#e8d5ff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.3s" repeatCount="indefinite"/></circle>
+    <circle cx="855" cy="10" r="0.6" fill="#ddd6fe"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.1s" repeatCount="indefinite"/></circle>
+    <circle cx="885" cy="38" r="1" fill="#c4b5fd"><animate attributeName="opacity" values="1;0.4;1" dur="4.6s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Layer 2: mid-field stars -->
+  <g opacity="0.7">
+    <circle cx="28" cy="65" r="1.2" fill="#ddd6fe"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.7s" repeatCount="indefinite"/></circle>
+    <circle cx="60" cy="110" r="0.8" fill="#c4b5fd"><animate attributeName="opacity" values="1;0.3;1" dur="3.8s" repeatCount="indefinite"/></circle>
+    <circle cx="95" cy="75" r="1.5" fill="#ede9fe"><animate attributeName="opacity" values="0.4;1;0.4" dur="5.2s" repeatCount="indefinite"/></circle>
+    <circle cx="140" cy="95" r="0.9" fill="#e8d5ff"><animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.3s" repeatCount="indefinite"/></circle>
+    <circle cx="180" cy="130" r="1.1" fill="#ddd6fe"><animate attributeName="opacity" values="1;0.5;1" dur="4.1s" repeatCount="indefinite"/></circle>
+    <circle cx="220" cy="85" r="0.7" fill="#c4b5fd"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" repeatCount="indefinite"/></circle>
+    <circle cx="260" cy="115" r="1.3" fill="#ede9fe"><animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/></circle>
+    <circle cx="300" cy="70" r="0.8" fill="#e8d5ff"><animate attributeName="opacity" values="1;0.2;1" dur="4.9s" repeatCount="indefinite"/></circle>
+    <circle cx="340" cy="100" r="1" fill="#ddd6fe"><animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></circle>
+    <circle cx="380" cy="80" r="1.4" fill="#c4b5fd"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="420" cy="120" r="0.9" fill="#ede9fe"><animate attributeName="opacity" values="1;0.6;1" dur="5.7s" repeatCount="indefinite"/></circle>
+    <circle cx="460" cy="65" r="1.1" fill="#e8d5ff"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.2s" repeatCount="indefinite"/></circle>
+    <circle cx="500" cy="100" r="0.7" fill="#ddd6fe"><animate attributeName="opacity" values="0.6;0.1;0.6" dur="4.5s" repeatCount="indefinite"/></circle>
+    <circle cx="840" cy="80" r="1.2" fill="#c4b5fd"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.9s" repeatCount="indefinite"/></circle>
+    <circle cx="870" cy="120" r="0.8" fill="#ede9fe"><animate attributeName="opacity" values="1;0.3;1" dur="4.2s" repeatCount="indefinite"/></circle>
+    <circle cx="895" cy="70" r="1" fill="#e8d5ff"><animate attributeName="opacity" values="0.4;1;0.4" dur="3.8s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Layer 3: bright foreground stars -->
+  <g filter="url(#starGlow)">
+    <circle cx="55" cy="180" r="1.8" fill="#ede9fe"><animate attributeName="opacity" values="0.6;1;0.6" dur="2.1s" repeatCount="indefinite"/></circle>
+    <circle cx="110" cy="220" r="1.5" fill="#ddd6fe"><animate attributeName="opacity" values="1;0.4;1" dur="3.9s" repeatCount="indefinite"/></circle>
+    <circle cx="170" cy="195" r="2" fill="#c4b5fd"><animate attributeName="opacity" values="0.3;1;0.3" dur="4.7s" repeatCount="indefinite"/></circle>
+    <circle cx="230" cy="240" r="1.3" fill="#ede9fe"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.6s" repeatCount="indefinite"/></circle>
+    <circle cx="290" cy="210" r="1.6" fill="#ddd6fe"><animate attributeName="opacity" values="1;0.5;1" dur="5.3s" repeatCount="indefinite"/></circle>
+    <circle cx="350" cy="250" r="1.2" fill="#e8d5ff"><animate attributeName="opacity" values="0.4;1;0.4" dur="3.1s" repeatCount="indefinite"/></circle>
+    <circle cx="410" cy="180" r="1.9" fill="#c4b5fd"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="4.4s" repeatCount="indefinite"/></circle>
+    <circle cx="30" cy="250" r="1.4" fill="#ddd6fe"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.8s" repeatCount="indefinite"/></circle>
+    <circle cx="860" cy="195" r="1.7" fill="#ede9fe"><animate attributeName="opacity" values="1;0.3;1" dur="3.5s" repeatCount="indefinite"/></circle>
+    <circle cx="890" cy="250" r="1.3" fill="#c4b5fd"><animate attributeName="opacity" values="0.4;1;0.4" dur="5.1s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- ═══ PIXEL STAR SHAPES (4-point) ═══ -->
+  <!-- Bright 4-point pixel star shapes matching your art -->
+  <g filter="url(#starGlow)">
+    <!-- top area stars -->
+    <polygon points="90,22 92,27 97,29 92,31 90,36 88,31 83,29 88,27" fill="#ddd6fe" opacity="0.9">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="0.8 0.8;1.1 1.1;0.8 0.8" dur="3.2s" repeatCount="indefinite" additive="sum" transform-origin="90 29"/>
+    </polygon>
+    <polygon points="320,45 321.5,49 325.5,50.5 321.5,52 320,56 318.5,52 314.5,50.5 318.5,49" fill="#c4b5fd" opacity="0.85">
+      <animate attributeName="opacity" values="1;0.4;1" dur="4.1s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="500,30 502,36 508,38 502,40 500,46 498,40 492,38 498,36" fill="#ede9fe" opacity="0.95">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="rotate" values="0 500 38;15 500 38;0 500 38;-15 500 38;0 500 38" dur="6s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="150,240 151.5,244 155.5,245.5 151.5,247 150,251 148.5,247 144.5,245.5 148.5,244" fill="#a78bfa" opacity="0.9">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.8s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="30,160 32,167 39,169 32,171 30,178 28,171 21,169 28,167" fill="#ddd6fe" opacity="0.8">
+      <animate attributeName="opacity" values="1;0.3;1" dur="5s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="0.9 0.9;1.15 1.15;0.9 0.9" dur="5s" repeatCount="indefinite" additive="sum" transform-origin="30 169"/>
+    </polygon>
+    <polygon points="400,255 402,261 408,263 402,265 400,271 398,265 392,263 398,261" fill="#c4b5fd" opacity="0.85">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="4.3s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- right side stars (not overlapping planet) -->
+    <polygon points="830,155 831.5,159 835.5,160.5 831.5,162 830,166 828.5,162 824.5,160.5 828.5,159" fill="#ddd6fe" opacity="0.9">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3.6s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="875,200 877,206 883,208 877,210 875,216 873,210 867,208 873,206" fill="#ede9fe" opacity="0.8">
+      <animate attributeName="opacity" values="1;0.2;1" dur="4.9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="0.85 0.85;1.2 1.2;0.85 0.85" dur="4.9s" repeatCount="indefinite" additive="sum" transform-origin="875 208"/>
+    </polygon>
+  </g>
+
+  <!-- ═══ PLANET WITH ROTATION ═══ -->
+  <!-- Planet glow halo -->
+  <circle cx="680" cy="130" r="90" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.15"/>
+  <circle cx="680" cy="130" r="95" fill="none" stroke="#a78bfa" stroke-width="0.5" opacity="0.08"/>
+
+  <!-- Ring BACK (behind planet) -->
+  <ellipse cx="680" cy="148" rx="112" ry="18" fill="none" stroke="url(#ringGrad)" stroke-width="6" opacity="0.45" clip-path="url(#ringBackClip)"/>
+  <defs>
+    <clipPath id="ringBackClip">
+      <rect x="568" y="130" width="224" height="36"/>
+    </clipPath>
+  </defs>
+
+  <!-- Planet body -->
+  <circle cx="680" cy="130" r="72" fill="url(#planetGrad)" filter="url(#softGlow)"/>
+
+  <!-- Planet surface bands (rotation animation) -->
+  <g clip-path="url(#planetClip)">
+    <!-- Animated surface stripes to simulate rotation -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0;-144,0;0,0" dur="12s" repeatCount="indefinite"/>
+      <!-- Band 1 -->
+      <ellipse cx="680" cy="115" rx="200" ry="10" fill="#4c1d95" opacity="0.4"/>
+      <ellipse cx="824" cy="115" rx="200" ry="10" fill="#4c1d95" opacity="0.4"/>
+      <!-- Band 2 -->
+      <ellipse cx="660" cy="135" rx="200" ry="7" fill="#2e0f5e" opacity="0.5"/>
+      <ellipse cx="804" cy="135" rx="200" ry="7" fill="#2e0f5e" opacity="0.5"/>
+      <!-- Band 3 -->
+      <ellipse cx="700" cy="150" rx="200" ry="9" fill="#6d28d9" opacity="0.3"/>
+      <ellipse cx="844" cy="150" rx="200" ry="9" fill="#6d28d9" opacity="0.3"/>
+      <!-- Band 4 -->
+      <ellipse cx="680" cy="108" rx="200" ry="5" fill="#7c3aed" opacity="0.25"/>
+      <ellipse cx="824" cy="108" rx="200" ry="5" fill="#7c3aed" opacity="0.25"/>
+    </g>
+    <!-- Highlight shimmer -->
+    <ellipse cx="655" cy="105" rx="28" ry="18" fill="#e8d5ff" opacity="0.22"/>
+    <ellipse cx="648" cy="100" rx="14" ry="9" fill="#ffffff" opacity="0.1"/>
+  </g>
+
+  <!-- Ring FRONT (over planet) -->
+  <ellipse cx="680" cy="148" rx="112" ry="18" fill="none" stroke="url(#ringGrad)" stroke-width="8" opacity="0.7">
+    <clipPath id="ringFrontClip">
+      <rect x="568" y="93" width="224" height="55"/>
+    </clipPath>
+  </ellipse>
+  <!-- Ring shadow on planet -->
+  <ellipse cx="680" cy="148" rx="72" ry="8" fill="#1e0a3c" opacity="0.35" clip-path="url(#planetClip)"/>
+
+  <!-- ═══ TEXT CONTENT ═══ -->
+  <!-- Name text -->
+  <text x="80" y="110" font-family="'Courier New', monospace" font-size="42" font-weight="bold" fill="#ddd6fe" filter="url(#glow)" letter-spacing="3">Jasmehar Kaur</text>
+
+  <!-- Subtitle -->
+  <text x="82" y="145" font-family="'Courier New', monospace" font-size="13" fill="#a78bfa" letter-spacing="2" opacity="0.9">✦ developer  ·  explorer  ·  dreamer ✦</text>
+
+  <!-- Tagline -->
+  <text x="82" y="185" font-family="'Courier New', monospace" font-size="11" fill="#7c3aed" letter-spacing="1.5" opacity="0.8">working on a better version of myself, one patch at a time</text>
+
+  <!-- Small pixel star accents near text -->
+  <circle cx="67" cy="108" r="2.5" fill="#7c3aed" opacity="0.7"/>
+  <circle cx="67" cy="143" r="1.5" fill="#a78bfa" opacity="0.6"/>
+
+  <!-- Bottom star strip -->
+  <text x="0" y="272" font-family="'Courier New', monospace" font-size="9" fill="#4c1d95" letter-spacing="8" opacity="0.7">· · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · ·</text>
+</svg>
