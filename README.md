@@ -144,19 +144,19 @@
 <br/>
 
 <!-- ✦ SECTION DIVIDER ✦ -->
-<div align="center">
+<!-- <div align="center"> -->
 
 ```
 ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · ✦
 ```
 
-</div>
+<!-- </div> -->
 
 <!-- ══════════════════════════════════════════════════ -->
 <!--                  PROJECTS                         -->
 <!-- ══════════════════════════════════════════════════ -->
 
-<div align="center">
+<!-- <div align="center">
 
 ### 🌠 &nbsp; `projects in orbit` &nbsp; 🌠
 
@@ -166,7 +166,7 @@
 &nbsp;
 <img src="https://github-readme-stats.vercel.app/api/pin/?username=jasmehar-k&repo=BREAD.board&hide_border=true&bg_color=090014&title_color=a78bfa&icon_color=7c3aed&text_color=ddd6fe&border_radius=0" />
 
-</div>
+</div> -->
 
 <br/>
 
@@ -196,13 +196,13 @@
 <br/>
 
 <!-- ✦ SECTION DIVIDER ✦ -->
-<div align="center">
+<!-- <div align="center">
 
 ```
 ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · · ✦ · · · ✦
 ```
 
-</div>
+</div> -->
 
 <!-- ══════════════════════════════════════════════════ -->
 <!--                   FUN FACTS                       -->
