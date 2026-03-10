@@ -131,7 +131,7 @@
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&hide_border=true&bg_color=090014&title_color=a78bfa&icon_color=7c3aed&text_color=ddd6fe&ring_color=5b21b6&border_radius=0&custom_title=✦+github+stats" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api?username=jasmehar-k&show_icons=true&hide_border=true&bg_color=090014&title_color=a78bfa&icon_color=7c3aed&text_color=ddd6fe&ring_color=5b21b6&border_radius=0&custom_title=✦+github+stats" height="165"/>
 &nbsp;&nbsp;
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jasmehar-k&layout=compact&hide_border=true&bg_color=090014&title_color=a78bfa&text_color=ddd6fe&border_radius=0&custom_title=✦+languages" height="165"/>
 
@@ -217,11 +217,10 @@
 <br/>
 
 ```
-  ⋆ ·  01  · i name my variables like they're characters in a novel
-  ✦ ·  02  · dark mode isn't a preference — it's a lifestyle
-  ⋆ ·  03  · been known to refactor code at 2am just because it felt right
-  ✦ ·  04  · my git commit history tells a chaotic, beautiful story
-  ⋆ ·  05  · [YOUR OWN FUN FACT HERE]
+  ⋆ ·  01  · 
+  ✦ ·  02  · 
+  ⋆ ·  03  · 
+  ✦ ·  04  · 
 ``` -->
 
 <br/>
