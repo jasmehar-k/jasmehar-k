@@ -124,7 +124,7 @@
 
 <div align="center">
 
-### 🪐 &nbsp; `stats from the void` &nbsp; 🪐
+### 🪐 &nbsp; `stats` &nbsp; 🪐
 
 <br/>
 
