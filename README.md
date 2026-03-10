@@ -15,7 +15,7 @@
 <br/>
 
 <!-- ✦ PIXEL FONT TYPING ANIMATION ✦ -->
-<!-- <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=10&duration=2800&pause=900&color=A78BFA&center=true&vCenter=true&width=620&height=45&lines=★+welcome+to+my+corner+of+the+cosmos+★;⋆+one+commit+at+a+time+⋆;✦+always+learning%2C+always+floating+✦;☽+coffee+%2B+code+%2B+2am+lo-fi+☾;🪐+the+void+is+full+of+possibilities" alt="typing" /> -->
+<img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=10&duration=2800&pause=900&color=A78BFA&center=true&vCenter=true&width=620&height=45&lines=★+welcome+to+my+corner+of+the+cosmos+★;⋆+one+commit+at+a+time+⋆;✦+always+learning%2C+always+floating+✦;☽+coffee+%2B+code+%2B+2am+lo-fi+☾;🪐+the+void+is+full+of+possibilities" alt="typing" />
 
 <br/><br/>
 
@@ -46,15 +46,15 @@
 
 <br/>
 
-  ╔══════════════════════════════════════════════════════╗
-  ║                                                      ║
-  ║  name     →  jasmehar                                ║
-  ║  location →  toronto                                 ║
-  ║  role     →  developer                               ║
-  ║  status   →  hacking                                 ║
-  ║                                                      ║
-  ║   ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    ║
-  ╚══════════════════════════════════════════════════════╝
+  ╔══════════════════════════════════════════════════════╗<br/>
+  ║                                                      ║<br/>
+  ║  name     →  jasmehar                                ║<br/>
+  ║  location →  toronto                                 ║<br/>
+  ║  role     →  developer                               ║<br/>
+  ║  status   →  hacking                                 ║<br/>
+  ║                                                      ║<br/>
+  ║   ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    ║<br/>
+  ╚══════════════════════════════════════════════════════╝<br/>
 
 
 <!-- <div align="center">
