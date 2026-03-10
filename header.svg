@@ -34,19 +34,6 @@
       <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Planet stripe mask for rotation illusion -->
-    <linearGradient id="stripeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#4c1d95" stop-opacity="0.5"/>
-      <stop offset="30%" stop-color="#6d28d9" stop-opacity="0.2"/>
-      <stop offset="60%" stop-color="#4c1d95" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#2e0f5e" stop-opacity="0.4"/>
-    </linearGradient>
-
-    <!-- Clip path for planet circle -->
-    <clipPath id="planetClip">
-      <circle cx="680" cy="130" r="72"/>
-    </clipPath>
-
     <!-- Glow filter -->
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -131,7 +118,6 @@
   </g>
 
   <!-- ═══ PIXEL STAR SHAPES (4-point) ═══ -->
-  <!-- Bright 4-point pixel star shapes matching your art -->
   <g filter="url(#starGlow)">
     <!-- top area stars -->
     <polygon points="90,22 92,27 97,29 92,31 90,36 88,31 83,29 88,27" fill="#ddd6fe" opacity="0.9">
@@ -165,60 +151,121 @@
     </polygon>
   </g>
 
-  <!-- ═══ PLANET WITH ROTATION ═══ -->
-  <!-- Planet glow halo -->
-  <circle cx="680" cy="130" r="90" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.15"/>
-  <circle cx="680" cy="130" r="95" fill="none" stroke="#a78bfa" stroke-width="0.5" opacity="0.08"/>
+  <!-- ═══ PLANET — tilted -28deg, rings diagonal, surface truly rotates ═══ -->
+  <!--
+    Strategy:
+    • Everything lives in a group rotated -28deg around the planet centre (680,130).
+    • The ring is a simple flat ellipse in that local space → looks diagonal in screen space.
+    • Surface bands are rect stripes that translate continuously left, clipped to the circle.
+      Two copies side-by-side (each 144px wide = 2× radius) create a seamless loop.
+    • Ring is split: back half rendered before the planet body, front half after.
+  -->
 
-  <!-- Ring BACK (behind planet) -->
-  <ellipse cx="680" cy="148" rx="112" ry="18" fill="none" stroke="url(#ringGrad)" stroke-width="6" opacity="0.45" clip-path="url(#ringBackClip)"/>
   <defs>
-    <clipPath id="ringBackClip">
-      <rect x="568" y="130" width="224" height="36"/>
+    <!-- clip to planet disc, in UNrotated space (clip paths ignore parent transforms) -->
+    <clipPath id="planetClip">
+      <circle cx="680" cy="130" r="72"/>
     </clipPath>
+
+    <!-- clip ring back half  (lower half of ellipse in local coords) -->
+    <clipPath id="ringBack">
+      <!-- in rotated local space: lower half = y > 130 → after rotation this is the "back" -->
+      <rect x="550" y="130" width="260" height="80"/>
+    </clipPath>
+    <!-- clip ring front half (upper half in local coords = visually in front of planet) -->
+    <clipPath id="ringFront">
+      <rect x="550" y="80"  width="260" height="50"/>
+    </clipPath>
+
+    <!-- Gradient for ring — runs along its long axis -->
+    <linearGradient id="ringG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#4c1d95" stop-opacity="0"/>
+      <stop offset="18%"  stop-color="#a78bfa" stop-opacity="0.55"/>
+      <stop offset="38%"  stop-color="#ddd6fe" stop-opacity="0.9"/>
+      <stop offset="50%"  stop-color="#ede9fe" stop-opacity="1"/>
+      <stop offset="62%"  stop-color="#ddd6fe" stop-opacity="0.9"/>
+      <stop offset="82%"  stop-color="#a78bfa" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#4c1d95" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- second thinner ring -->
+    <linearGradient id="ringG2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#7c3aed" stop-opacity="0"/>
+      <stop offset="25%"  stop-color="#c4b5fd" stop-opacity="0.4"/>
+      <stop offset="50%"  stop-color="#ddd6fe" stop-opacity="0.6"/>
+      <stop offset="75%"  stop-color="#c4b5fd" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </linearGradient>
   </defs>
 
-  <!-- Planet body -->
-  <circle cx="680" cy="130" r="72" fill="url(#planetGrad)" filter="url(#softGlow)"/>
+  <!-- outer glow halos (screen space, no rotation needed) -->
+  <circle cx="680" cy="130" r="88"  fill="#7c3aed" opacity="0.06"/>
+  <circle cx="680" cy="130" r="80"  fill="#5b21b6" opacity="0.09"/>
 
-  <!-- Planet surface bands (rotation animation) -->
-  <g clip-path="url(#planetClip)">
-    <!-- Animated surface stripes to simulate rotation -->
-    <g>
-      <animateTransform attributeName="transform" type="translate" values="0,0;-144,0;0,0" dur="12s" repeatCount="indefinite"/>
-      <!-- Band 1 -->
-      <ellipse cx="680" cy="115" rx="200" ry="10" fill="#4c1d95" opacity="0.4"/>
-      <ellipse cx="824" cy="115" rx="200" ry="10" fill="#4c1d95" opacity="0.4"/>
-      <!-- Band 2 -->
-      <ellipse cx="660" cy="135" rx="200" ry="7" fill="#2e0f5e" opacity="0.5"/>
-      <ellipse cx="804" cy="135" rx="200" ry="7" fill="#2e0f5e" opacity="0.5"/>
-      <!-- Band 3 -->
-      <ellipse cx="700" cy="150" rx="200" ry="9" fill="#6d28d9" opacity="0.3"/>
-      <ellipse cx="844" cy="150" rx="200" ry="9" fill="#6d28d9" opacity="0.3"/>
-      <!-- Band 4 -->
-      <ellipse cx="680" cy="108" rx="200" ry="5" fill="#7c3aed" opacity="0.25"/>
-      <ellipse cx="824" cy="108" rx="200" ry="5" fill="#7c3aed" opacity="0.25"/>
+  <!-- ── everything below is in tilted local space ── -->
+  <g transform="rotate(-28, 680, 130)">
+
+    <!-- RING BACK (lower half — appears behind planet) -->
+    <ellipse cx="680" cy="130" rx="118" ry="22" fill="none"
+             stroke="url(#ringG)"  stroke-width="9"  opacity="0.5"  clip-path="url(#ringBack)"/>
+    <ellipse cx="680" cy="130" rx="132" ry="28" fill="none"
+             stroke="url(#ringG2)" stroke-width="5"  opacity="0.35" clip-path="url(#ringBack)"/>
+
+    <!-- PLANET BODY -->
+    <circle cx="680" cy="130" r="72" fill="url(#planetGrad)" filter="url(#softGlow)"/>
+
+    <!-- ROTATING SURFACE — continuous left-scroll, two tiled copies -->
+    <g clip-path="url(#planetClip)">
+
+      <!-- dark base tint so bands show up -->
+      <circle cx="680" cy="130" r="72" fill="#1e0a3c" opacity="0.15"/>
+
+      <!-- scrolling band group — 144px wide tile × 2 copies = 288px, loops every 8s -->
+      <g>
+        <animateTransform attributeName="transform" type="translate"
+          values="0,0; -144,0"
+          dur="8s" repeatCount="indefinite" calcMode="linear"/>
+
+        <!-- copy A -->
+        <rect x="608" y="96"  width="144" height="14" fill="#3b0764" opacity="0.55"/>
+        <rect x="608" y="112" width="144" height="9"  fill="#6d28d9" opacity="0.35"/>
+        <rect x="608" y="123" width="144" height="16" fill="#2e0f5e" opacity="0.50"/>
+        <rect x="608" y="141" width="144" height="8"  fill="#7c3aed" opacity="0.30"/>
+        <rect x="608" y="151" width="144" height="12" fill="#4c1d95" opacity="0.45"/>
+        <rect x="608" y="165" width="144" height="7"  fill="#5b21b6" opacity="0.28"/>
+
+        <!-- copy B (immediately to the right, seamless tile) -->
+        <rect x="752" y="96"  width="144" height="14" fill="#3b0764" opacity="0.55"/>
+        <rect x="752" y="112" width="144" height="9"  fill="#6d28d9" opacity="0.35"/>
+        <rect x="752" y="123" width="144" height="16" fill="#2e0f5e" opacity="0.50"/>
+        <rect x="752" y="141" width="144" height="8"  fill="#7c3aed" opacity="0.30"/>
+        <rect x="752" y="151" width="144" height="12" fill="#4c1d95" opacity="0.45"/>
+        <rect x="752" y="165" width="144" height="7"  fill="#5b21b6" opacity="0.28"/>
+      </g>
+
+      <!-- specular highlight (static, rotates with planet tilt) -->
+      <ellipse cx="652" cy="102" rx="26" ry="16" fill="#e8d5ff" opacity="0.20"/>
+      <ellipse cx="645" cy="97"  rx="12" ry="7"  fill="#ffffff"  opacity="0.10"/>
     </g>
-    <!-- Highlight shimmer -->
-    <ellipse cx="655" cy="105" rx="28" ry="18" fill="#e8d5ff" opacity="0.22"/>
-    <ellipse cx="648" cy="100" rx="14" ry="9" fill="#ffffff" opacity="0.1"/>
-  </g>
 
-  <!-- Ring FRONT (over planet) -->
-  <ellipse cx="680" cy="148" rx="112" ry="18" fill="none" stroke="url(#ringGrad)" stroke-width="8" opacity="0.7">
-    <clipPath id="ringFrontClip">
-      <rect x="568" y="93" width="224" height="55"/>
-    </clipPath>
-  </ellipse>
-  <!-- Ring shadow on planet -->
-  <ellipse cx="680" cy="148" rx="72" ry="8" fill="#1e0a3c" opacity="0.35" clip-path="url(#planetClip)"/>
+    <!-- RING SHADOW cast on planet surface -->
+    <ellipse cx="680" cy="130" rx="72" ry="8" fill="#0d001a" opacity="0.30" clip-path="url(#planetClip)"/>
+
+    <!-- RING FRONT (upper half — appears in front of planet) -->
+    <ellipse cx="680" cy="130" rx="118" ry="22" fill="none"
+             stroke="url(#ringG)"  stroke-width="9"  opacity="0.75" clip-path="url(#ringFront)"/>
+    <ellipse cx="680" cy="130" rx="132" ry="28" fill="none"
+             stroke="url(#ringG2)" stroke-width="5"  opacity="0.5"  clip-path="url(#ringFront)"/>
+
+  </g>
+  <!-- ── end tilted group ── -->
 
   <!-- ═══ TEXT CONTENT ═══ -->
   <!-- Name text -->
   <text x="80" y="110" font-family="'Courier New', monospace" font-size="42" font-weight="bold" fill="#ddd6fe" filter="url(#glow)" letter-spacing="3">Jasmehar Kaur</text>
 
   <!-- Subtitle -->
-  <text x="82" y="145" font-family="'Courier New', monospace" font-size="13" fill="#a78bfa" letter-spacing="2" opacity="0.9">✦ developer  ·  explorer  ·  dreamer ✦</text>
+  <text x="82" y="145" font-family="'Courier New', monospace" font-size="13" fill="#a78bfa" letter-spacing="2" opacity="0.9">✦ code · build · iterate ✦</text>
 
   <!-- Tagline -->
   <text x="82" y="185" font-family="'Courier New', monospace" font-size="11" fill="#7c3aed" letter-spacing="1.5" opacity="0.8">working on a better version of myself, one patch at a time</text>
