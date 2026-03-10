@@ -162,9 +162,9 @@
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=jasmehar-k&repo=YOUR_REPO_1&hide_border=true&bg_color=090014&title_color=a78bfa&icon_color=7c3aed&text_color=ddd6fe&border_radius=0" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=jasmehar-k&repo=iClick&hide_border=true&bg_color=090014&title_color=a78bfa&icon_color=7c3aed&text_color=ddd6fe&border_radius=0" />
 &nbsp;
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=jasmehar-k&repo=YOUR_REPO_2&hide_border=true&bg_color=090014&title_color=a78bfa&icon_color=7c3aed&text_color=ddd6fe&border_radius=0" />
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=jasmehar-k&repo=BREAD.board&hide_border=true&bg_color=090014&title_color=a78bfa&icon_color=7c3aed&text_color=ddd6fe&border_radius=0" />
 
 </div>
 
@@ -185,7 +185,7 @@
 
 <div align="center">
 
-### ☽ &nbsp; `activity across the galaxy` &nbsp; ☾
+### ☽ &nbsp; `activity` &nbsp; ☾
 
 <br/>
 
