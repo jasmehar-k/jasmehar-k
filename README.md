@@ -20,10 +20,9 @@
 <br/><br/>
 
 <!-- ✦ SOCIAL LINKS ✦ -->
-[![LinkedIn](https://img.shields.io/badge/·%20linkedin%20·-%231b0a3b?style=flat-square&logo=linkedin&logoColor=ddd6fe)](https://linkedin.com/in/jasmehar-kaur)
-[![Portfolio](https://img.shields.io/badge/·%20portfolio%20·-%231b0a3b?style=flat-square&logo=firefox-browser&logoColor=ddd6fe)](https://jasmehar-k.github.io/)
-[![Email](https://img.shields.io/badge/·%20email%20·-%231b0a3b?style=flat-square&logo=gmail&logoColor=a78bfa)](mailto:jasmehar.kr@gmail.com)
-
+[![LinkedIn](https://img.shields.io/badge/·%20linkedin%20·-%231b0a3b?style=flat-square&logoColor=ddd6fe)](https://linkedin.com/in/jasmehar-kaur)
+[![Portfolio](https://img.shields.io/badge/·%20portfolio%20·-%231b0a3b?style=flat-square&logoColor=ddd6fe)](https://jasmehar-k.github.io/)
+[![Email](https://img.shields.io/badge/·%20email%20·-%231b0a3b?style=flat-square&logoColor=a78bfa)](mailto:jasmehar.kr@gmail.com)
 <br/>
 
 ![visitors](https://komarev.com/ghpvc/?username=jasmehar-k&color=5b21b6&style=flat-square&label=✦+stargazers)
