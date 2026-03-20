@@ -17,7 +17,8 @@
 <!-- ✦ PIXEL FONT TYPING ANIMATION ✦ -->
 <!-- <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=10&duration=2800&pause=900&color=A78BFA&center=true&vCenter=true&width=620&height=45&lines=★+welcome+to+my+corner+of+the+cosmos+★;⋆+one+commit+at+a+time+⋆;✦+always+learning%2C+always+floating+✦;☽+coffee+%2B+code+%2B+2am+lo-fi+☾;🪐+the+void+is+full+of+possibilities" alt="typing" /> -->
 
-<br/><br/>
+<!-- <br/> -->
+<br/>
 
 <!-- ✦ SOCIAL LINKS ✦ -->
 [![LinkedIn](https://img.shields.io/badge/·%20linkedin%20·-%231b0a3b?style=flat-square&logoColor=ddd6fe)](https://linkedin.com/in/jasmehar-kaur)
@@ -45,7 +46,7 @@
 
 <br/>
 
-<pre>
+<!-- <pre>
          
        ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    
   ╔════════════════════════════════════════════════════════╗
@@ -60,7 +61,9 @@
   ╚════════════════════════════════════════════════════════╝
        ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    
 
-</pre>
+</pre> -->
+<img src="./info.svg" width="100%" alt="info"/>
+
 
 <!-- <div align="center">
 
