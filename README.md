@@ -96,23 +96,34 @@
 ![Python](https://img.shields.io/badge/python-1e0a3c?style=for-the-badge&logo=python&logoColor=ddd6fe)
 ![JavaScript](https://img.shields.io/badge/javascript-090014?style=for-the-badge&logo=javascript&logoColor=ddd6fe)
 ![TypeScript](https://img.shields.io/badge/typescript-130829?style=for-the-badge&logo=typescript&logoColor=a78bfa)
-![Go](https://img.shields.io/badge/go-090014?style=for-the-badge&logo=go&logoColor=a78bfa)
+![Java](https://img.shields.io/badge/java-1e0a3c?style=for-the-badge&logo=openjdk&logoColor=ddd6fe)
+![C++](https://img.shields.io/badge/c++-090014?style=for-the-badge&logo=cplusplus&logoColor=a78bfa)
+![Go](https://img.shields.io/badge/go-130829?style=for-the-badge&logo=go&logoColor=ddd6fe)
+![SQL](https://img.shields.io/badge/sql-1e0a3c?style=for-the-badge&logo=postgresql&logoColor=a78bfa)
 
 **· · · frontend · · ·**
 
 ![React](https://img.shields.io/badge/react-130829?style=for-the-badge&logo=react&logoColor=ddd6fe)
-![Next.js](https://img.shields.io/badge/next.js-1e0a3c?style=for-the-badge&logo=next.js&logoColor=a78bfa)
-![TailwindCSS](https://img.shields.io/badge/tailwind-090014?style=for-the-badge&logo=tailwind-css&logoColor=ddd6fe)
+![React Native](https://img.shields.io/badge/react_native-090014?style=for-the-badge&logo=react&logoColor=a78bfa)
+![TailwindCSS](https://img.shields.io/badge/tailwind-1e0a3c?style=for-the-badge&logo=tailwind-css&logoColor=ddd6fe)
 
 **· · · backend & infra · · ·**
 
-![Node.js](https://img.shields.io/badge/node.js-1e0a3c?style=for-the-badge&logo=node.js&logoColor=ddd6fe)
-![PostgreSQL](https://img.shields.io/badge/postgres-090014?style=for-the-badge&logo=postgresql&logoColor=a78bfa)
-![Docker](https://img.shields.io/badge/docker-130829?style=for-the-badge&logo=docker&logoColor=ddd6fe)
+![Node.js](https://img.shields.io/badge/node.js-130829?style=for-the-badge&logo=node.js&logoColor=ddd6fe)
+![Flask](https://img.shields.io/badge/flask-090014?style=for-the-badge&logo=flask&logoColor=a78bfa)
+![FastAPI](https://img.shields.io/badge/fastapi-1e0a3c?style=for-the-badge&logo=fastapi&logoColor=ddd6fe)
+![Docker](https://img.shields.io/badge/docker-130829?style=for-the-badge&logo=docker&logoColor=a78bfa)
+![Kubernetes](https://img.shields.io/badge/kubernetes-090014?style=for-the-badge&logo=kubernetes&logoColor=ddd6fe)
 ![AWS](https://img.shields.io/badge/aws-1e0a3c?style=for-the-badge&logo=amazon-aws&logoColor=a78bfa)
 
-</div>
+**· · · ai / ml · · ·**
 
+![PyTorch](https://img.shields.io/badge/pytorch-130829?style=for-the-badge&logo=pytorch&logoColor=ddd6fe)
+![Scikit-learn](https://img.shields.io/badge/scikit--learn-090014?style=for-the-badge&logo=scikitlearn&logoColor=a78bfa)
+![LangChain](https://img.shields.io/badge/langchain-1e0a3c?style=for-the-badge&logo=chainlink&logoColor=ddd6fe)
+![OpenCV](https://img.shields.io/badge/opencv-130829?style=for-the-badge&logo=opencv&logoColor=a78bfa)
+
+</div>
 <br/>
 
 <!-- ✦ SECTION DIVIDER ✦ -->
