@@ -53,7 +53,7 @@
   ║  ✦ name ->  jasmehar                                   ║
   ║  ✦ location -> toronto                                 ║
   ║  ✦ role -> developer                                   ║
-  ║  ✦ working on ->  <a href="https://github.com/jasmehar-k/dill.pkl">dill.pkl</a>                             ║
+  ║  ✦ working on ->  <a href="https://github.com/jasmehar-k/hiremeAI">hiremeAI</a>                             ║
   ║  ✦ studying at -> University of Waterloo               ║
   ║  ✦ studying -> software engineering (2nd year)         ║
   ║                                                        ║
