@@ -54,8 +54,7 @@
   ║  ✦ name ->  jasmehar                                   ║
   ║  ✦ location -> toronto                                 ║
   ║  ✦ role -> developer                                   ║
-  ║  ✦ working on ->  <a href="https://github.com/jasmehar-k/hiremeAI">hiremeAI</a>                             ║
-  ║  ✦ studying at -> University of Waterloo               ║
+  ║  ✦ studying at -> university of qaterloo               ║
   ║  ✦ studying -> software engineering (2nd year)         ║
   ║                                                        ║
   ╚════════════════════════════════════════════════════════╝
