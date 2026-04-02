@@ -54,7 +54,7 @@
   ║  ✦ name ->  jasmehar                                   ║
   ║  ✦ location -> toronto                                 ║
   ║  ✦ role -> developer                                   ║
-  ║  ✦ studying at -> university of qaterloo               ║
+  ║  ✦ studying at -> university of waterloo               ║
   ║  ✦ studying -> software engineering (2nd year)         ║
   ║                                                        ║
   ╚════════════════════════════════════════════════════════╝
