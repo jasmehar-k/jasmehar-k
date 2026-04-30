@@ -56,7 +56,7 @@
   ║  ✦ role -> developer                                   ║
   ║  ✦ studying at -> university of waterloo               ║
   ║  ✦ studying -> software engineering (2nd year)         ║
-  ║  ✦ currently working on → <a href="https://github.com/jasmehar-k/pelican">pelican</a>                                  ║
+  ║  ✦ currently working on → <a href="https://github.com/jasmehar-k/pelican">pelican</a>                           ║
   ║                                                        ║
   ╚════════════════════════════════════════════════════════╝
        ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    
