@@ -92,8 +92,7 @@
 **· · · languages · · ·**
 
 ![Python](https://img.shields.io/badge/python-1e0a3c?style=for-the-badge&logo=python&logoColor=ddd6fe)
-![Java](https://img.shields.io/badge/java-090014?style=for-the-badge&logo=openjdk&logoColor=a78bfa)
-![Go](https://img.shields.io/badge/go-130829?style=for-the-badge&logo=go&logoColor=ddd6fe)
+![Java](https://img.shields.io/badge/java-090014?style=for-the-badge&logo=oracle&logoColor=a78bfa)![Go](https://img.shields.io/badge/go-130829?style=for-the-badge&logo=go&logoColor=ddd6fe)
 ![C++](https://img.shields.io/badge/c++-1e0a3c?style=for-the-badge&logo=cplusplus&logoColor=a78bfa)
 ![C](https://img.shields.io/badge/c-090014?style=for-the-badge&logo=c&logoColor=ddd6fe)
 ![TypeScript](https://img.shields.io/badge/typescript-130829?style=for-the-badge&logo=typescript&logoColor=a78bfa)
