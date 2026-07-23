@@ -213,6 +213,9 @@
   </g>
 
   <!-- ═══ PLANET SYSTEM — tilted -28°, layered rings, orbiting moon, parallax rotation ═══ -->
+  <!-- shift right + scale up, pivoting on the planet centre -->
+  <g transform="translate(728,132) scale(1.15) translate(-680,-130)">
+
   <!-- Breathing halo -->
   <circle cx="680" cy="130" r="92" fill="#6d5aa8" opacity="0.06">
     <animate attributeName="opacity" values="0.04;0.09;0.04" dur="7s" repeatCount="indefinite"/>
@@ -342,6 +345,7 @@
       <animate attributeName="opacity" values="1;0" keyTimes="0;0.5" calcMode="discrete" dur="17s" repeatCount="indefinite"/>
     </g>
 
+  </g>
   </g>
   <!-- ── end tilted group ── -->
 
