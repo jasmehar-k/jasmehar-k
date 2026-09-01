@@ -52,11 +52,10 @@
   ╔════════════════════════════════════════════════════════╗
   ║                                                        ║
   ║  ✦ name ->  jasmehar                                   ║
-  ║  ✦ location -> toronto                                 ║
-  ║  ✦ role -> developer                                   ║
+  ║  ✦ role -> sde intern @ aws                                   ║
   ║  ✦ studying at -> university of waterloo               ║
   ║  ✦ studying -> software engineering                    ║
-  ║  ✦ currently working on → <a href="https://github.com/jasmehar-k/pelican">pelican</a>                      ║
+  ║  ✦ check out → <a href="https://github.com/jasmehar-k/pelican">pelican</a>                      ║
   ║                                                        ║
   ╚════════════════════════════════════════════════════════╝
        ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    
