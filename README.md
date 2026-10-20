@@ -26,8 +26,7 @@
 [![Email](https://img.shields.io/badge/·%20email%20·-%231b0a3b?style=flat-square&logoColor=a78bfa)](mailto:jasmehar.kr@gmail.com)
 <br/>
 
-![visitors](https://komarev.com/ghpvc/?username=jasmehar-k&color=5b21b6&style=flat-square&label=✦+stargazers)
-
+![visitors](https://komarev.com/ghpvc/?username=jasmehar-k&color=5b21b6&style=flat-square&label=%E2%9C%A6+stargazers)
 </div>
 
 <br/>
