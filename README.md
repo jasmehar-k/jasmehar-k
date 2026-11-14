@@ -45,21 +45,9 @@
 
 <br/>
 
-<pre>
-         
-       ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    
-  ╔════════════════════════════════════════════════════════╗
-  ║                                                        ║
-  ║  ✦ name ->  jasmehar                                   ║
-  ║  ✦ role -> sde intern @ aws                            ║
-  ║  ✦ studying at -> university of waterloo               ║
-  ║  ✦ studying -> software engineering                    ║
-  ║  ✦ check out -> <a href="https://github.com/jasmehar-k/pelican">pelican</a>                                ║
-  ║                                                        ║
-  ╚════════════════════════════════════════════════════════╝
-       ✦ · · · · · · · · · · · · · · · · · · · · · · ✦    
-
-</pre>
+<p align="center">
+  <img src="./about.svg" width="100%" alt="jasmehar · sde intern @ aws · university of waterloo · software engineering"/>
+</p>
 <!-- <img src="./info.svg" width="100%" alt="info"/> -->
 
 
@@ -203,7 +191,11 @@
 
 <br/>
 
+<img src="./assets/space-shooter.gif" width="100%" alt="contribution graph as a space shooter"/>
+
+<!-- previous activity graph:
 [![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=jasmehar-k&bg_color=090014&color=a78bfa&line=7c3aed&point=ddd6fe&area=true&area_color=1e0a3c&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+-->
 
 </div>
 
