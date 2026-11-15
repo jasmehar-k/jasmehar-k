@@ -75,6 +75,9 @@
 
 <br/>
 
+<img src="./stack.svg" width="100%" alt="tech stack: python, java, go, c++, c, typescript, javascript, sql, react, react native, angular, tailwind, node.js, fastapi, flask, kafka, docker, kubernetes, helm, aws, opensearch, pytorch, scikit-learn, langchain, opencv, tesseract, rag, git, linux, postman, selenium, snyk, aqua, matlab"/>
+
+<!-- previous badge wall:
 **· · · languages · · ·**
 
 ![Python](https://img.shields.io/badge/python-1e0a3c?style=for-the-badge&logo=python&logoColor=ddd6fe)
@@ -122,6 +125,7 @@
 ![Snyk](https://img.shields.io/badge/snyk-1e0a3c?style=for-the-badge&logo=snyk&logoColor=a78bfa)
 ![Aqua](https://img.shields.io/badge/aqua-130829?style=for-the-badge&logoColor=ddd6fe)
 ![MATLAB](https://img.shields.io/badge/matlab-090014?style=for-the-badge&logo=mathworks&logoColor=a78bfa)
+-->
 
 </div>
 <br/><!-- ✦ SECTION DIVIDER ✦ -->
