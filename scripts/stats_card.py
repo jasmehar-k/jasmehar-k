@@ -137,7 +137,6 @@ def summarize(user):
         "followers": user["followers"]["totalCount"],
         "weekly": weekly,
         "langs": langs,
-        "updated": dt.date.today().isoformat(),
     }
 
 
@@ -280,8 +279,7 @@ def render(s):
         lx += wlab
     parts.append(f'<g opacity="0"><animate attributeName="opacity" to="1" dur="0.6s" begin="2.2s" fill="freeze"/>{"".join(legend)}</g>')
 
-    H = int(ly + 34)
-    footer = f'<text x="{W-32}" y="{H-14}" font-size="10" fill="{DIM}" text-anchor="end">updated {s["updated"]} · auto-generated daily</text>'
+    H = int(ly + 26)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{FONT}">
 <defs>
@@ -297,7 +295,6 @@ def render(s):
   <rect width="{W}" height="{H}" fill="url(#bg)"/>
   <rect width="{W}" height="{H}" fill="url(#neb)"/>
   {"".join(parts)}
-  {footer}
   <rect width="{W}" height="{TOP}" fill="#050010" opacity="0.55"/>
   <line x1="0" y1="{TOP}" x2="{W}" y2="{TOP}" stroke="{MUTE}" stroke-opacity="0.7"/>
   <circle cx="22" cy="16" r="5" fill="{DIM}"/><circle cx="39" cy="16" r="5" fill="{MID}"/><circle cx="56" cy="16" r="5" fill="{LIGHT}"/>
