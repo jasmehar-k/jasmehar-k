@@ -164,6 +164,69 @@ def sparkle(cx, cy, s):
             f"L{cx},{cy+s} L{cx-s*0.24},{cy+s*0.24} L{cx-s},{cy} L{cx-s*0.24},{cy-s*0.24}Z")
 
 
+PLANET_COLS = ["#ece7f8", "#e3c9dc", "#b4a7d9", "#e6dcb4", "#9d8fc7", "#a9b6e6", "#7c6bb8"]
+
+
+def _ring(cx, cy, R, ry, rot, sw, col, op):
+    t = f'transform="translate({cx:.1f} {cy:.1f}) rotate({rot})"'
+    a = f'fill="none" stroke="{col}" stroke-opacity="{op}" stroke-width="{sw:.1f}" stroke-linecap="round"'
+    return (f'<path d="M{-R:.1f},0 A{R:.1f},{ry:.1f} 0 0 1 {R:.1f},0" {a} {t}/>',
+            f'<path d="M{-R:.1f},0 A{R:.1f},{ry:.1f} 0 0 0 {R:.1f},0" {a} {t}/>')
+
+
+def planet_svg(i, cx, cy, r, defs):
+    """Seven different worlds: banded giant, ringed, cratered, ice + moon, continents, tilted, dwarf."""
+    kind = i % 7
+    col = PLANET_COLS[kind]
+    defs.append(f'<radialGradient id="pg{i}" cx="0.34" cy="0.3" r="0.85"><stop offset="0" stop-color="{col}"/><stop offset="1" stop-color="#3d2d70"/></radialGradient>'
+                f'<clipPath id="pc{i}"><circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}"/></clipPath>')
+    back = front = inner = ""
+
+    def band(o, th, op, c="#fff"):
+        return f'<ellipse cx="{cx:.1f}" cy="{cy + r*o:.1f}" rx="{r*1.3:.1f}" ry="{r*th:.1f}" fill="{c}" opacity="{op}"/>'
+
+    def crater(dx, dy, cr):
+        return (f'<circle cx="{cx+dx*r:.1f}" cy="{cy+dy*r:.1f}" r="{cr*r:.1f}" fill="#241448" opacity="0.3"/>'
+                f'<circle cx="{cx+dx*r+0.6:.1f}" cy="{cy+dy*r+0.6:.1f}" r="{cr*r:.1f}" fill="none" stroke="#fff" stroke-opacity="0.3" stroke-width="0.6"/>')
+
+    if kind == 0:   # banded gas giant with a storm
+        inner = (band(-0.62, 0.07, 0.18) + band(-0.36, 0.12, 0.14, "#4a3a78") + band(-0.08, 0.05, 0.22) + band(0.2, 0.14, 0.16, "#4a3a78")
+                 + band(0.52, 0.06, 0.2) + band(0.75, 0.08, 0.12, "#4a3a78")
+                 + f'<ellipse cx="{cx+r*0.32:.1f}" cy="{cy+r*0.2:.1f}" rx="{r*0.2:.1f}" ry="{r*0.1:.1f}" fill="#fff" opacity="0.4"/>')
+    elif kind == 1:  # ringed
+        inner = band(-0.3, 0.1, 0.15) + band(0.25, 0.08, 0.15, "#4a3a78")
+        b1, f1 = _ring(cx, cy, r * 1.75, r * 0.42, -18, max(r * 0.13, 1.6), col, 0.75)
+        b2, f2 = _ring(cx, cy, r * 1.42, r * 0.33, -18, max(r * 0.06, 1), "#fff", 0.45)
+        back, front = b1 + b2, f1 + f2
+    elif kind == 2:  # cratered rock
+        inner = "".join(crater(*c) for c in [(-0.3, -0.25, 0.24), (0.3, 0.3, 0.17), (0.4, -0.35, 0.11), (-0.15, 0.5, 0.12), (-0.6, 0.25, 0.08)])
+    elif kind == 3:  # ice world with a moon
+        inner = (f'<ellipse cx="{cx:.1f}" cy="{cy-r*0.85:.1f}" rx="{r*0.75:.1f}" ry="{r*0.32:.1f}" fill="#fff" opacity="0.6"/>'
+                 f'<ellipse cx="{cx:.1f}" cy="{cy+r*0.9:.1f}" rx="{r*0.6:.1f}" ry="{r*0.22:.1f}" fill="#fff" opacity="0.45"/>'
+                 f'<path d="M{cx-r:.1f},{cy-r*0.1:.1f} q{r*0.5:.1f},{-r*0.35:.1f} {r:.1f},0 t{r:.1f},0" fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="{max(r*0.08,0.8):.1f}"/>'
+                 f'<path d="M{cx-r:.1f},{cy+r*0.3:.1f} q{r*0.5:.1f},{r*0.3:.1f} {r:.1f},0 t{r:.1f},0" fill="none" stroke="#4a3a78" stroke-opacity="0.4" stroke-width="{max(r*0.1,0.8):.1f}"/>')
+        R, ry = r * 1.7, r * 0.5
+        front = (f'<circle r="{max(r*0.17, 1.8):.1f}" fill="{PALE}"><animateMotion dur="7s" repeatCount="indefinite" '
+                 f'path="M{cx+R:.1f},{cy:.1f} A{R:.1f},{ry:.1f} 0 1 1 {cx-R:.1f},{cy:.1f} A{R:.1f},{ry:.1f} 0 1 1 {cx+R:.1f},{cy:.1f}"/></circle>')
+    elif kind == 4:  # continents
+        inner = (f'<g transform="translate({cx:.1f} {cy:.1f}) scale({r:.2f})" fill="#3d2d70" opacity="0.6">'
+                 f'<path d="M-.7,-.3 C-.4,-.8 .15,-.6 .05,-.25 C0,.1 -.5,.25 -.7,-.3Z"/>'
+                 f'<path d="M.15,.1 C.6,-.15 .9,.3 .55,.65 C.25,.9 -.05,.45 .15,.1Z"/>'
+                 f'<path d="M.3,-.65 C.55,-.8 .75,-.5 .5,-.4Z"/><path d="M-.5,.5 C-.3,.4 -.2,.7 -.4,.75Z"/></g>'
+                 f'<ellipse cx="{cx-r*0.1:.1f}" cy="{cy+r*0.05:.1f}" rx="{r*0.5:.1f}" ry="{r*0.07:.1f}" fill="#fff" opacity="0.3" transform="rotate(-12 {cx:.1f} {cy:.1f})"/>')
+    elif kind == 5:  # tilted, steep ring
+        inner = f'<g transform="rotate(-62 {cx:.1f} {cy:.1f})">{band(-0.45, 0.1, 0.2)}{band(0, 0.07, 0.15, "#4a3a78")}{band(0.45, 0.1, 0.2)}</g>'
+        back, front = _ring(cx, cy, r * 1.65, r * 0.3, -62, max(r * 0.08, 1.1), "#fff", 0.55)
+    else:            # dwarf with companion rocks
+        inner = crater(-0.2, -0.2, 0.25) + crater(0.35, 0.3, 0.15)
+        front = (f'<circle cx="{cx+r*1.5:.1f}" cy="{cy-r*0.7:.1f}" r="{max(r*0.2, 1.5):.1f}" fill="{col}" opacity="0.8"/>'
+                 f'<circle cx="{cx-r*1.4:.1f}" cy="{cy+r*0.8:.1f}" r="{max(r*0.13, 1.2):.1f}" fill="{col}" opacity="0.6"/>')
+    return (f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r+7:.1f}" fill="{col}" opacity="0.07"/>{back}'
+            f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" fill="url(#pg{i})"/>'
+            f'<g clip-path="url(#pc{i})">{inner}<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" fill="url(#pshade)"/></g>'
+            f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="{r:.1f}" fill="none" stroke="#fff" stroke-opacity="0.22" stroke-width="0.7"/>{front}')
+
+
 def render(s):
     random.seed(9)
     TOP = 32
@@ -252,32 +315,27 @@ def render(s):
                      f'<text x="{x+16}" y="{SY}" font-size="12" fill="{MID}">{label}</text>'
                      f'{counter(x + 16 + len(label) * 7.4 + 8, SY, val, 13, LIGHT, begin=1.2 + i * 0.08, steps=10)}')
 
-    # ---- languages bar
-    LY = SY + 34
+    # ---- language planets
+    import math
+    LY = SY + 40
     parts.append(f'<text x="32" y="{LY}" font-size="12" fill="{MID}">✦ languages</text>')
-    BX, BY, BW, BH = 32, LY + 12, W - 64, 10
-    defs.append(f'<clipPath id="bar"><rect x="{BX}" y="{BY}" width="{BW}" height="{BH}" rx="5"/></clipPath>')
-    segs, legend = [], []
-    x = BX
-    for i, (name, frac) in enumerate(s["langs"]):
-        w = BW * frac
-        col = LANG_COLORS[min(i, len(LANG_COLORS) - 1)]
-        segs.append(f'<rect x="{x:.1f}" y="{BY}" width="0" height="{BH}" fill="{col}">'
-                    f'<animate attributeName="width" to="{w:.1f}" values="0;{w:.1f}" dur="0.6s" begin="{1.6 + i*0.12:.2f}s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.3 0 0.2 1"/></rect>')
-        x += w
-    parts.append(f'<rect x="{BX}" y="{BY}" width="{BW}" height="{BH}" rx="5" fill="{TILE_HI}"/>'
-                 f'<g clip-path="url(#bar)">{"".join(segs)}</g>')
-    lx, ly = BX, BY + 32
-    for i, (name, frac) in enumerate(s["langs"]):
-        col = LANG_COLORS[min(i, len(LANG_COLORS) - 1)]
-        label = f"{name.lower()} {frac*100:.1f}%"
-        wlab = 18 + len(label) * 7.0 + 22
-        if lx + wlab > BX + BW:
-            lx, ly = BX, ly + 20
-        legend.append(f'<circle cx="{lx+5}" cy="{ly-4}" r="4" fill="{col}"/>'
-                      f'<text x="{lx+16}" y="{ly}" font-size="11.5" fill="{LIGHT}">{escape(name.lower())} <tspan fill="{DIM}">{frac*100:.1f}%</tspan></text>')
-        lx += wlab
-    parts.append(f'<g opacity="0"><animate attributeName="opacity" to="1" dur="0.6s" begin="2.2s" fill="freeze"/>{"".join(legend)}</g>')
+    PYc = LY + 62
+    parts.append(f'<path d="M24,{PYc+8} Q{W/2},{PYc-22} {W-24},{PYc+8}" fill="none" stroke="{MUTE}" stroke-dasharray="1 6" stroke-linecap="round"/>')
+    radii = [8 + 42 * math.sqrt(f) for _, f in s["langs"]]
+    gap = (W - 110 - 2 * sum(radii)) / max(len(radii) - 1, 1)
+    x = 55
+    for i, ((name, frac), r) in enumerate(zip(s["langs"], radii)):
+        cx = x + r
+        cy = PYc - 7 * (1 - ((cx - W / 2) / (W / 2 - 24)) ** 2)
+        d0 = 1.6 + i * 0.12
+        parts.append(
+            f'<g opacity="0"><animate attributeName="opacity" to="1" dur="0.6s" begin="{d0:.2f}s" fill="freeze"/>'
+            f'<g><animateTransform attributeName="transform" type="translate" values="0 -3;0 3;0 -3" dur="{5 + i*0.7:.1f}s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>'
+            f'{planet_svg(i, cx, cy, r, defs)}</g>'
+            f'<text x="{cx:.1f}" y="{PYc+58}" font-size="11.5" fill="{LIGHT}" text-anchor="middle">{escape(name.lower())}</text>'
+            f'<text x="{cx:.1f}" y="{PYc+73}" font-size="10.5" fill="{DIM}" text-anchor="middle">{frac*100:.1f}%</text></g>')
+        x += 2 * r + gap
+    ly = PYc + 73
 
     H = int(ly + 26)
 
@@ -288,6 +346,7 @@ def render(s):
   <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{TILE_HI}"/><stop offset="1" stop-color="{TILE}"/></linearGradient>
   <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{SOFT}" stop-opacity="0.35"/><stop offset="1" stop-color="{SOFT}" stop-opacity="0"/></linearGradient>
   <linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="{MUTE}"/><stop offset="0.5" stop-color="{DIM}"/><stop offset="1" stop-color="{MUTE}"/></linearGradient>
+  <radialGradient id="pshade" cx="0.3" cy="0.28" r="0.95"><stop offset="0.5" stop-color="#070212" stop-opacity="0"/><stop offset="1" stop-color="#070212" stop-opacity="0.8"/></radialGradient>
   <clipPath id="card"><rect x="1" y="1" width="{W-2}" height="{H-2}" rx="14"/></clipPath>
   {"".join(defs)}
 </defs>
